@@ -6,7 +6,7 @@ import (
 
 type AutoModerationRuleCreateHandler struct{}
 
-func (_ *AutoModerationRuleCreateHandler) Handle(s *Session, data []byte) {
+func (*AutoModerationRuleCreateHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewAutoModerationRuleCreate(s.rest, data)
 
 	if err != nil {
@@ -18,7 +18,7 @@ func (_ *AutoModerationRuleCreateHandler) Handle(s *Session, data []byte) {
 
 type AutoModerationRuleDeleteHandler struct{}
 
-func (_ *AutoModerationRuleDeleteHandler) Handle(s *Session, data []byte) {
+func (*AutoModerationRuleDeleteHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewAutoModerationRuleDelete(s.rest, data)
 
 	if err != nil {
@@ -30,7 +30,7 @@ func (_ *AutoModerationRuleDeleteHandler) Handle(s *Session, data []byte) {
 
 type AutoModerationRuleUpdateHandler struct{}
 
-func (_ *AutoModerationRuleUpdateHandler) Handle(s *Session, data []byte) {
+func (*AutoModerationRuleUpdateHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewAutoModerationRuleUpdate(s.rest, data)
 
 	if err != nil {
@@ -42,7 +42,7 @@ func (_ *AutoModerationRuleUpdateHandler) Handle(s *Session, data []byte) {
 
 type AutoModerationActionExecutionHandler struct{}
 
-func (_ *AutoModerationActionExecutionHandler) Handle(s *Session, data []byte) {
+func (*AutoModerationActionExecutionHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewAutoModerationActionExecution(s.rest, data)
 
 	if err != nil {

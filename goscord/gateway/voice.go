@@ -6,15 +6,18 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/Goscord/goscord/goscord/gateway/packet"
-	"github.com/gorilla/websocket"
-	"go.uber.org/atomic"
-	"golang.org/x/crypto/nacl/secretbox"
+	"log"
 	"net"
 	"strconv"
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/gorilla/websocket"
+	"go.uber.org/atomic"
+	"golang.org/x/crypto/nacl/secretbox"
+
+	"github.com/Goscord/goscord/goscord/gateway/packet"
 )
 
 const frameSize uint32 = 960
@@ -540,6 +543,10 @@ func (v *VoiceConnection) Disconnect() (err error) {
 }
 
 func (v *VoiceConnection) Close() {
+	// TODO : std logger for now
+	logger := log.Default()
+	logger.SetFlags(log.Ldate | log.Llongfile)
+
 	v.ready.Store(false)
 
 	v.Lock()
@@ -563,7 +570,7 @@ func (v *VoiceConnection) Close() {
 	if udpConn != nil {
 		err := udpConn.Close()
 		if err != nil {
-			// TODO: Log error
+			logger.Println("udp close connection error: ", err)
 		}
 
 		v.Lock()
@@ -577,14 +584,14 @@ func (v *VoiceConnection) Close() {
 	if v.conn != nil {
 		err := v.conn.WriteMessage(websocket.CloseMessage, websocket.FormatCloseMessage(websocket.CloseNormalClosure, ""))
 		if err != nil {
-			// TODO: Log error
+			logger.Println("voice connection write message error: ", err)
 		}
 
 		<-time.After(1 * time.Second)
 
 		err = v.conn.Close()
 		if err != nil {
-			// TODO: Log error
+			logger.Println("voice connection close connection error: ", err)
 		}
 
 		v.conn = nil

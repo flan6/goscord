@@ -6,7 +6,7 @@ import (
 
 type ChannelCreateHandler struct{}
 
-func (_ *ChannelCreateHandler) Handle(s *Session, data []byte) {
+func (*ChannelCreateHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewChannelCreate(s.rest, data)
 
 	if err != nil {
@@ -20,7 +20,7 @@ func (_ *ChannelCreateHandler) Handle(s *Session, data []byte) {
 
 type ChannelUpdateHandler struct{}
 
-func (_ *ChannelUpdateHandler) Handle(s *Session, data []byte) {
+func (*ChannelUpdateHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewChannelUpdate(s.rest, data)
 
 	if err != nil {
@@ -34,7 +34,7 @@ func (_ *ChannelUpdateHandler) Handle(s *Session, data []byte) {
 
 type ChannelDeleteHandler struct{}
 
-func (_ *ChannelDeleteHandler) Handle(s *Session, data []byte) {
+func (*ChannelDeleteHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewChannelDelete(s.rest, data)
 
 	if err != nil {
@@ -50,7 +50,7 @@ func (_ *ChannelDeleteHandler) Handle(s *Session, data []byte) {
 
 type ChannelPinsUpdateHandler struct{}
 
-func (_ *ChannelPinsUpdateHandler) Handle(s *Session, data []byte) {
+func (*ChannelPinsUpdateHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewChannelPinsUpdate(s.rest, data)
 
 	if err != nil {
@@ -62,7 +62,7 @@ func (_ *ChannelPinsUpdateHandler) Handle(s *Session, data []byte) {
 
 type ThreadCreateHandler struct{}
 
-func (_ *ThreadCreateHandler) Handle(s *Session, data []byte) {
+func (*ThreadCreateHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewThreadCreate(s.rest, data)
 
 	if err != nil {
@@ -76,7 +76,7 @@ func (_ *ThreadCreateHandler) Handle(s *Session, data []byte) {
 
 type ThreadUpdateHandler struct{}
 
-func (_ *ThreadUpdateHandler) Handle(s *Session, data []byte) {
+func (*ThreadUpdateHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewThreadUpdate(s.rest, data)
 
 	if err != nil {
@@ -90,7 +90,7 @@ func (_ *ThreadUpdateHandler) Handle(s *Session, data []byte) {
 
 type ThreadDeleteHandler struct{}
 
-func (_ *ThreadDeleteHandler) Handle(s *Session, data []byte) {
+func (*ThreadDeleteHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewThreadDelete(s.rest, data)
 
 	if err != nil {
@@ -106,7 +106,7 @@ func (_ *ThreadDeleteHandler) Handle(s *Session, data []byte) {
 
 type ThreadListSyncHandler struct{}
 
-func (_ *ThreadListSyncHandler) Handle(s *Session, data []byte) {
+func (*ThreadListSyncHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewThreadListSync(s.rest, data)
 
 	if err != nil {
@@ -122,7 +122,7 @@ func (_ *ThreadListSyncHandler) Handle(s *Session, data []byte) {
 
 type ThreadMemberUpdateHandler struct{}
 
-func (_ *ThreadMemberUpdateHandler) Handle(s *Session, data []byte) {
+func (*ThreadMemberUpdateHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewThreadMemberUpdate(s.rest, data)
 
 	if err != nil {
@@ -136,7 +136,7 @@ func (_ *ThreadMemberUpdateHandler) Handle(s *Session, data []byte) {
 
 type ThreadMembersUpdateHandler struct{}
 
-func (_ *ThreadMembersUpdateHandler) Handle(s *Session, data []byte) {
+func (*ThreadMembersUpdateHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewThreadMembersUpdate(s.rest, data)
 
 	if err != nil {

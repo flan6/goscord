@@ -2,9 +2,10 @@ package gateway
 
 import (
 	"errors"
+	"sync"
+
 	"github.com/Goscord/goscord/goscord/discord"
 	"github.com/Goscord/goscord/goscord/gateway/event"
-	"sync"
 )
 
 type State struct {

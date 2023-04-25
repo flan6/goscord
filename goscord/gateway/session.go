@@ -3,20 +3,20 @@ package gateway
 import (
 	"errors"
 	"fmt"
-	"github.com/Goscord/goscord/goscord/discord"
-	"github.com/Goscord/goscord/goscord/gateway/event"
-	"github.com/Goscord/goscord/goscord/gateway/packet"
-	"github.com/Goscord/goscord/goscord/rest"
 	"io"
 	"net"
 	"sync"
 	"syscall"
 	"time"
 
-	"github.com/goccy/go-json"
-
 	ev "github.com/asaskevich/EventBus"
+	"github.com/goccy/go-json"
 	"github.com/gorilla/websocket"
+
+	"github.com/Goscord/goscord/goscord/discord"
+	"github.com/Goscord/goscord/goscord/gateway/event"
+	"github.com/Goscord/goscord/goscord/gateway/packet"
+	"github.com/Goscord/goscord/goscord/rest"
 )
 
 type Status int

@@ -6,7 +6,7 @@ import (
 
 type PresenceUpdateHandler struct{}
 
-func (_ *PresenceUpdateHandler) Handle(s *Session, Data []byte) {
+func (*PresenceUpdateHandler) Handle(s *Session, Data []byte) {
 	ev, err := event.NewPresenceUpdate(s.rest, Data)
 
 	if err != nil {
@@ -20,7 +20,7 @@ func (_ *PresenceUpdateHandler) Handle(s *Session, Data []byte) {
 
 type GuildCreateHandler struct{}
 
-func (_ *GuildCreateHandler) Handle(s *Session, data []byte) {
+func (*GuildCreateHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewGuildCreate(s.rest, data)
 
 	if err != nil {
@@ -34,7 +34,7 @@ func (_ *GuildCreateHandler) Handle(s *Session, data []byte) {
 
 type GuildUpdateHandler struct{}
 
-func (_ *GuildUpdateHandler) Handle(s *Session, data []byte) {
+func (*GuildUpdateHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewGuildUpdate(s.rest, data)
 
 	if err != nil {
@@ -48,7 +48,7 @@ func (_ *GuildUpdateHandler) Handle(s *Session, data []byte) {
 
 type GuildDeleteHandler struct{}
 
-func (_ *GuildDeleteHandler) Handle(s *Session, data []byte) {
+func (*GuildDeleteHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewGuildDelete(s.rest, data)
 
 	if err != nil {
@@ -62,7 +62,7 @@ func (_ *GuildDeleteHandler) Handle(s *Session, data []byte) {
 
 type GuildBanAddHandler struct{}
 
-func (_ *GuildBanAddHandler) Handle(s *Session, data []byte) {
+func (*GuildBanAddHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewGuildBanAdd(s.rest, data)
 
 	if err != nil {
@@ -81,7 +81,7 @@ func (_ *GuildBanAddHandler) Handle(s *Session, data []byte) {
 
 type GuildBanRemoveHandler struct{}
 
-func (_ *GuildBanRemoveHandler) Handle(s *Session, data []byte) {
+func (*GuildBanRemoveHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewGuildBanRemove(s.rest, data)
 
 	if err != nil {
@@ -100,7 +100,7 @@ func (_ *GuildBanRemoveHandler) Handle(s *Session, data []byte) {
 
 type GuildEmojisUpdateHandler struct{}
 
-func (_ *GuildEmojisUpdateHandler) Handle(s *Session, data []byte) {
+func (*GuildEmojisUpdateHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewGuildEmojisUpdate(s.rest, data)
 
 	if err != nil {
@@ -119,7 +119,7 @@ func (_ *GuildEmojisUpdateHandler) Handle(s *Session, data []byte) {
 
 type GuildStickersUpdateHandler struct{}
 
-func (_ *GuildStickersUpdateHandler) Handle(s *Session, data []byte) {
+func (*GuildStickersUpdateHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewGuildStickersUpdate(s.rest, data)
 
 	if err != nil {
@@ -133,7 +133,7 @@ func (_ *GuildStickersUpdateHandler) Handle(s *Session, data []byte) {
 
 type GuildIntegrationsUpdateHandler struct{}
 
-func (_ *GuildIntegrationsUpdateHandler) Handle(s *Session, data []byte) {
+func (*GuildIntegrationsUpdateHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewGuildIntegrationsUpdate(s.rest, data)
 
 	if err != nil {
@@ -145,7 +145,7 @@ func (_ *GuildIntegrationsUpdateHandler) Handle(s *Session, data []byte) {
 
 type GuildMemberAddHandler struct{}
 
-func (_ *GuildMemberAddHandler) Handle(s *Session, data []byte) {
+func (*GuildMemberAddHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewGuildMemberAdd(s.rest, data)
 
 	if err != nil {
@@ -161,7 +161,7 @@ func (_ *GuildMemberAddHandler) Handle(s *Session, data []byte) {
 
 type GuildMemberRemoveHandler struct{}
 
-func (_ *GuildMemberRemoveHandler) Handle(s *Session, data []byte) {
+func (*GuildMemberRemoveHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewGuildMemberRemove(s.rest, data)
 
 	if err != nil {
@@ -177,7 +177,7 @@ func (_ *GuildMemberRemoveHandler) Handle(s *Session, data []byte) {
 
 type GuildMemberUpdateHandler struct{}
 
-func (_ *GuildMemberUpdateHandler) Handle(s *Session, data []byte) {
+func (*GuildMemberUpdateHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewGuildMemberUpdate(s.rest, data)
 
 	if err != nil {
@@ -191,7 +191,7 @@ func (_ *GuildMemberUpdateHandler) Handle(s *Session, data []byte) {
 
 type GuildMembersChunkHandler struct{}
 
-func (_ *GuildMembersChunkHandler) Handle(s *Session, data []byte) {
+func (*GuildMembersChunkHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewGuildMembersChunk(s.rest, data)
 
 	if err != nil {
@@ -207,7 +207,7 @@ func (_ *GuildMembersChunkHandler) Handle(s *Session, data []byte) {
 
 type GuildRoleCreateHandler struct{}
 
-func (_ *GuildRoleCreateHandler) Handle(s *Session, data []byte) {
+func (*GuildRoleCreateHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewGuildRoleCreate(s.rest, data)
 
 	if err != nil {
@@ -225,7 +225,7 @@ func (_ *GuildRoleCreateHandler) Handle(s *Session, data []byte) {
 
 type GuildRoleUpdateHandler struct{}
 
-func (_ *GuildRoleUpdateHandler) Handle(s *Session, data []byte) {
+func (*GuildRoleUpdateHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewGuildRoleUpdate(s.rest, data)
 
 	if err != nil {
@@ -243,7 +243,7 @@ func (_ *GuildRoleUpdateHandler) Handle(s *Session, data []byte) {
 
 type GuildRoleDeleteHandler struct{}
 
-func (_ *GuildRoleDeleteHandler) Handle(s *Session, data []byte) {
+func (*GuildRoleDeleteHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewGuildRoleDelete(s.rest, data)
 
 	if err != nil {

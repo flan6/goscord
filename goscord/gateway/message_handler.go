@@ -4,7 +4,7 @@ import "github.com/Goscord/goscord/goscord/gateway/event"
 
 type MessageCreateHandler struct{}
 
-func (_ *MessageCreateHandler) Handle(s *Session, data []byte) {
+func (*MessageCreateHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewMessageCreate(s.rest, data)
 
 	if err != nil {

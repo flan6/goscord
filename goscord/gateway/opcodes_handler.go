@@ -4,7 +4,7 @@ import "github.com/Goscord/goscord/goscord/gateway/event"
 
 type ReadyHandler struct{}
 
-func (_ *ReadyHandler) Handle(s *Session, data []byte) {
+func (*ReadyHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewReady(data)
 
 	if err != nil {
@@ -26,6 +26,6 @@ func (_ *ReadyHandler) Handle(s *Session, data []byte) {
 
 type ResumedHandler struct{}
 
-func (_ *ResumedHandler) Handle(s *Session, _ []byte) {
+func (*ResumedHandler) Handle(s *Session, _ []byte) {
 	s.bus.Publish("resumed")
 }

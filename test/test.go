@@ -2,12 +2,13 @@ package main
 
 import (
 	"fmt"
-	"github.com/Goscord/goscord/goscord"
-	"github.com/Goscord/goscord/goscord/discord"
-	"github.com/Goscord/goscord/goscord/gateway"
 	"os"
 	"os/signal"
 	"syscall"
+
+	"github.com/Goscord/goscord/goscord"
+	"github.com/Goscord/goscord/goscord/discord"
+	"github.com/Goscord/goscord/goscord/gateway"
 )
 
 func main() {
@@ -28,7 +29,7 @@ func main() {
 
 	// Wait here until term signal
 	sc := make(chan os.Signal, 1)
-	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt, os.Kill)
+	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt)
 	<-sc
 
 	// Cleanly close down the Discord session

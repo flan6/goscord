@@ -6,7 +6,7 @@ import (
 
 type VoiceServerUpdateHandler struct{}
 
-func (_ *VoiceServerUpdateHandler) Handle(s *Session, data []byte) {
+func (*VoiceServerUpdateHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewVoiceServerUpdate(s.rest, data)
 
 	if err != nil {
@@ -36,7 +36,7 @@ func (_ *VoiceServerUpdateHandler) Handle(s *Session, data []byte) {
 
 type VoiceStateUpdateHandler struct{}
 
-func (_ *VoiceStateUpdateHandler) Handle(s *Session, data []byte) {
+func (*VoiceStateUpdateHandler) Handle(s *Session, data []byte) {
 	ev, err := event.NewVoiceStateUpdate(s.rest, data)
 
 	if err != nil {
